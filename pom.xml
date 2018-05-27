@@ -40,5 +40,12 @@
             <artifactId>hbase-common</artifactId>
             <version>1.2.4</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.2.0</version>
+        </dependency>
+
     </dependencies>
 </project>
