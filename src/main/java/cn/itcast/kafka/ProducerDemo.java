@@ -6,14 +6,10 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
-/**
- * @author shengpli
- * @date 2018/05/27
- */
 public class ProducerDemo {
     public static void main(String[] args) {
         Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put("bootstrap.servers", "hadoop03:9092,hadoop04:9092,hadoop05:9092");
         props.put("acks", "all");
         props.put("retries", 0);
         props.put("batch.size", 16384);
@@ -24,8 +20,9 @@ public class ProducerDemo {
 
         Producer<String, String> producer = new KafkaProducer<>(props);
         for(int i = 0; i < 100; i++)
-            producer.send(new ProducerRecord<String, String>("my-topic", Integer.toString(i), Integer.toString(i)));
+            producer.send(new ProducerRecord<String, String>("lsp-test", Integer.toString(i), Integer.toString(i)));
 
         producer.close();
     }
 }
+

@@ -38,8 +38,6 @@ public class HDFSOperation {
 			FSDataOutputStream fos=fs.create(pa);
 			FileInputStream  fis=new FileInputStream("d:/qingshu.txt");
 			IOUtils.copy(fis, fos);
-			
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
